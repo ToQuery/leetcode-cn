@@ -17,20 +17,20 @@ public class IsomorphicStrings {
 
 
     private static boolean IsomorphicStrings(String s, String t) {
-        Map<Character, Object> s1Map = new HashMap<Character, Object>();
-        Map<Character, Object> s2Map = new HashMap<Character, Object>();
-        if (s == null || t == null) {
+        Map<Character, Integer> map1 = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+        int n1 = s.length(), n2 = t.length();
+        if (n1 != n2) {
             return false;
         }
-        if (s.length() != t.length()) {
-            return false;
-        }
-        for (int i = 0; i < s.length(); i++) {
-            Object s1 = s1Map.put(s.charAt(i), i);
-            Object s2 = s2Map.put(t.charAt(i), i);
-            if (s1 != s2) {
+        for (int i = 0; i < n1; i++) {
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+            if (!map1.getOrDefault(ch1, -1).equals(map2.getOrDefault(ch2, -1))) {
                 return false;
             }
+            map1.put(ch1, i);
+            map2.put(ch2, i);
         }
         return true;
     }
