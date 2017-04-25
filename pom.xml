@@ -12,6 +12,7 @@
         <module>Isomorphic Strings</module>
         <module>Min Stack</module>
         <module>Combinations</module>
+        <module>Burst Balloons</module>
     </modules>
     <dependencies>
         <dependency>

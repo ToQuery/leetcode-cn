@@ -12,6 +12,6 @@ public class Combinations {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.printf(JSON.toJSONString(s.combine(4, 3)));
+        System.out.printf(JSON.toJSONString(s.combine(4, 2)));
     }
 }
